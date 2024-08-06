@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>In My Home</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      header {
+        background-color: #020202;
+        color: #fff;
+        padding: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      article {
+        width: 30%;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        text-align: center;
+        position: relative;
+      }
+
+      article img {
+        max-width: 100%;
+      }
+
+      p {
+        margin-top: 0;
+      }
+
+      button.add-to-cart {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button.add-to-cart:hover {
+        background-color: #555;
+      }
+
+      .cart {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        padding: 10px;
+      }
+
+      /* Add animation */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      button.add-to-cart.animate {
+        animation-name: pulse;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Home</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Featured Products</h2>
+      <section>
+        <article>
+          <h3>Product 1</h3>
+          <img
+            src="png-transparent-hoodie-red-tołstojowka-clothing-polo-shirt-zipper-hoodie-top-thumbnail.png"
+            alt="Product 1"
+          />
+          <p>hoodies to boys</p>
+          <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+        </article>
+        <article>
+          <h3>Product 2</h3>
+          <img
+            src="png-clipart-smart-casual-male-shirt-clothing-vip-card-shading-tshirt-blue.png"
+            alt="Product 2"
+          />
+          <p>casual</p>
+          <button class="add-to-cart" data-product-id="2">Add to Cart</button>
+        </article>
+        <article>
+          <h3>Product 3</h3>
+          <img
+            src="kisspng-t-shirt-denim-jacket-clothing-wear-denim-jacket-standing-boy-5a7f14b9058330.8261484115182778170226.jpg"
+            alt="Product 3"
+          />
+          <p>clothes to childern</p>
+          <button class="add-to-cart" data-product-id="3">Add to Cart</button>
+        </article>
+      </section>
+    </main>
+    <div class="cart">
+      <h3>Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <p>Total: <span id="cart-total">$0.00</span></p>
+      <button id="checkout">Checkout</button>
+    </div>
+    <script>
+      // Get all the "Add to Cart" buttons
+      var addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+      // Add a click event listener to each button
+      addToCartButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          // Add the product to the cart
+          addToCart(button.getAttribute("data-product-id"));
+
+          // Add the animation class to the button
+          button.classList.add("animate");
+        });
+      });
+
+      function addToCart(productId) {
+        // TODO: Add the product to the cart
+      }
+    </script>
+  </body>
+</html>
